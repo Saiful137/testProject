@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>First JavaScript</title>
+	</head>
+
+	<body>
+		<div id="containerDiv">This text is from html</div>
+		<button id="btnChangeText" >Change Text</button>
+		
+		
+		
+			<fieldset id="area"><legend>Calculator</legend>
+				<div>
+					<label for="number1">Enter Number 1 : </label>
+					<input id="number1" type="text"/>
+					<span id="number1Range"></span>
+					<br><br>
+				</div>
+				<div>
+					<label for="number2">Enter Number 2 : </label>
+					<input id="number2" type="text"/>
+					<span id="number2Range"></span>
+					<br><br>
+				</div>
+				<div>
+					<label for="result">Your Result is : </label>
+					<input id="result" type="text"/><br><br>
+				</div>
+				
+					<button id="btnAdd">Click to ADD</button>
+					<button id="btnSubstract">Click to Substract</button>
+					<button id="btnMultiply">Click to Multiply</button>
+					<button id="btnDivision">Click to division</button>
+			
+			</fieldset>
+		
+	
+		
+		
+		
+	<script>
+		
+		/*var welcom = "Hello Saiful! Welcome to world of javascript...!!!";
+		window.alert(welcom);
+		window.document.write("Hello world...!");*/
+		
+		
+		//window.document.getElementById("area").style.margin = "auto";
+		//Change text function start here...
+		function changeText(){
+			var containerDiv = document.getElementById('containerDiv');
+			containerDiv.innerHTML = "This text is from javascript";
+		};
+		
+		var btnChangeText = document.getElementById('btnChangeText');
+		btnChangeText.addEventListener('click', changeText);
+		
+		
+		
+		//Add function start here...
+		function add(){
+			var number1 = parseInt(window.document.getElementById('number1').value);
+			var number2 = parseInt(window.document.getElementById('number2').value);
+			
+			if(number1 >= 10 || number2 >= 10)
+			{
+				window.alert('Number range excedded');
+				if(number1 >= 10){
+					window.document.getElementById('number1').style.border="1px solid red";
+					window.document.getElementById('number1Range').innerHTML = "Sorry, value should be less than 10!"
+				}
+				if(number2 >= 10){
+					window.document.getElementById('number2').style.border="1px solid red";
+					window.document.getElementById('number2Range').innerHTML = "Sorry, value should be less than 10!"
+				}
+			}
+			else
+			{				
+				var result = number1 + number2;
+				var result2 = document.getElementById('result');
+				result2.value = result;
+			}
+		//or document.getElementById('result').value = result;				
+		};
+		var btnSubstract = document.getElementById('btnSubstract');
+		btnSubstract.addEventListener('click', substract);
+		// End of Add function...
+		
+		
+		
+		//Substract function start here...
+		function substract(){
+			var number1 = parseInt(window.document.getElementById('number1').value);
+			var number2 = parseInt(window.document.getElementById('number2').value);
+			
+			var result = number1 - number2;
+			var result2 = document.getElementById('result');
+			result2.value = result;			
+		};
+		var btnAdd = document.getElementById('btnAdd');
+		btnAdd.addEventListener('click', add);
+		
+		//Multiply function start here...
+		function multiply(){
+			var number1 = parseInt(window.document.getElementById('number1').value);
+			var number2 = parseInt(window.document.getElementById('number2').value);
+			
+			var result = number1 * number2;
+			var result2 = document.getElementById('result');
+			result2.value = result;			
+		};
+		
+		var btnMultiply = document.getElementById('btnMultiply');
+		btnMultiply.addEventListener('click', multiply);
+
+		
+		//Division function start here...
+		function division(){
+			var number1 = parseInt(window.document.getElementById('number1').value);
+			var number2 = parseInt(window.document.getElementById('number2').value);
+			
+			var result = number1 / number2;
+			var result2 = document.getElementById('result');
+			result2.value = result;		
+		};			
+
+		var btnDivision = document.getElementById('btnDivision');
+		btnDivision.addEventListener('click', division);
+		
+		//End of Add, Substract, Multiply & Division functions...
+	
+	</script>
+		
+	</body>
+
+</html>
